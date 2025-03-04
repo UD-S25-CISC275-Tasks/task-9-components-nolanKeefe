@@ -36,12 +36,11 @@ export function findQuestion(
     questions: Question[],
     id: number,
 ): Question | null {
-    if (questions.find((question: Question): boolean => question.id === id))
-        return questions.find(
-            //it says somethings bad here but it aint its just a hater
-            (question: Question): boolean => question.id === id,
-        );
-    return null;
+    const index = questions.findIndex(
+        (question: Question): boolean => question.id === id,
+    );
+    if (index === -1) return null;
+    return questions[index];
 }
 
 /**
