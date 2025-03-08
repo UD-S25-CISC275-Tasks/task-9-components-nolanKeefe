@@ -12,7 +12,13 @@ export function ChangeType(): React.JSX.Element {
     return (
         <div>
             <Button onClick={flipType}>Change Type</Button>
-            <div>{type}</div>
+            <span>
+                {type === "short_answer_question" ? (
+                    <div>Short Answer</div>
+                ) : (
+                    <div>Multiple Choice</div>
+                )}
+            </span>
         </div>
     );
 }
