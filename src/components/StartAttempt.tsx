@@ -14,24 +14,14 @@ export function StartAttempt(): React.JSX.Element {
     }
     return (
         <span>
-            {attempts <= 0 || inProgress ? ( //if attempts is less than 0 and inprogress is true it should be a disabled button
-                <Button
-                    onClick={() => {
-                        startClick();
-                    }}
-                    disabled={true}
-                >
-                    Start Quiz
-                </Button>
-            ) : (
-                <Button
-                    onClick={() => {
-                        startClick();
-                    }}
-                >
-                    Start Quiz
-                </Button>
-            )}{" "}
+            <Button
+                onClick={() => {
+                    startClick();
+                }}
+                disabled={inProgress || attempts <= 0}
+            >
+                Start Quiz
+            </Button>{" "}
             attempts: {attempts}
             <Button
                 onClick={() => {
